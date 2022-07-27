@@ -1,33 +1,47 @@
 
 import './App.css';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-
-function Sextant_() {
-  return <h2>Sextant</h2>;
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Sextant_ />);
 
 
 function App() {
   return (
     
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         
         <a
-          className="App-link"
+          className = "App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Welcome to Sextant Services
         </a>
+        <WelcomeDialog></WelcomeDialog>
+          
       </header>
 
   );
 }
+
+function FancyBorder(props) {
+  return (
+    <div className={'FancyBorder FancyBorder-' + props.color}>
+      {props.children}
+    </div>
+  );
+}
+
+function WelcomeDialog() {
+  return (
+    <FancyBorder color="Red">
+      <h1 className="Dialog-title">
+        Welcome to Sextant (created by Cisco)
+      </h1>
+      <p className="Dialog-message">
+        Further information will be showcased here.
+      </p>
+    </FancyBorder>
+  );
+}
+
 
 export default App;
