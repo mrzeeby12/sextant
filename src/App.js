@@ -1,47 +1,19 @@
-
+import React, { Component } from 'react';
 import './App.css';
+import Banner from './Banner';
+import Exhibit from './Exhibit';
 
-
-function App() {
-  return (
-    
-      <header className="App-header">
-        
-        <a
-          className = "App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Welcome to Sextant Services
-        </a>
-        <WelcomeDialog></WelcomeDialog>
-          
-      </header>
-
-  );
+class App extends Component {
+    render() {
+        return (
+            <div className="App">
+                <Banner bannerText="Sextant Services " />
+                <Exhibit name="exhibit 1 "></Exhibit>
+                <Exhibit name="exhibit 2"></Exhibit>
+                <Exhibit name="exhibit 3"></Exhibit>
+            </div>
+        );
+    }
 }
-
-function FancyBorder(props) {
-  return (
-    <div className={'FancyBorder FancyBorder-' + props.color}>
-      {props.children}
-    </div>
-  );
-}
-
-function WelcomeDialog() {
-  return (
-    <FancyBorder color="Red">
-      <h1 className="Dialog-title">
-        Welcome to Sextant (created by Cisco)
-      </h1>
-      <p className="Dialog-message">
-        Further information will be showcased here.
-      </p>
-    </FancyBorder>
-  );
-}
-
 
 export default App;
